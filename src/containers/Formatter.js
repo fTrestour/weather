@@ -4,9 +4,7 @@ import React from 'react'
 import { Container } from '../components/Container'
 
 export const formatWeather = Component => ({ weather, metric, toggleUnits }) =>
-  weather == null ? (
-    <Container />
-  ) : (
+  weather == null ? null : (
     <Component
       datetime={new Date(weather.dt * 1000).toLocaleString()}
       temperature={weather.main.temp}
@@ -19,9 +17,7 @@ export const formatWeather = Component => ({ weather, metric, toggleUnits }) =>
   )
 
 export const formatSun = Component => ({ weather }) =>
-  weather.weather == null ? (
-    <Container />
-  ) : (
+  weather.weather == null ? null : (
     <Component
       time={new Date().toLocaleTimeString()}
       sunrise={new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}
