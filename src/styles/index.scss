@@ -103,6 +103,11 @@ body {
   }
 
   .Weather__Datetime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
     @include bottom;
   }
 }
@@ -138,5 +143,53 @@ body {
     @include margin;
 
     @include bottom;
+  }
+}
+
+.Slider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  text-transform: uppercase;
+
+  div {
+    margin: 0px 0px !important;
+  }
+
+  input {
+    display: none;
+  }
+
+  span {
+    margin: 0px 10px !important;
+
+    width: 22px;
+    height: 12px;
+
+    border: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    border-color: currentColor;
+
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+
+      margin-top: 1px;
+      margin-left: 1px;
+      width: 10px;
+      height: 10px;
+
+      border-radius: 5px;
+
+      background-color: currentColor;
+    }
+
+    &.right:after {
+      transform: translateX(10px);
+    }
   }
 }

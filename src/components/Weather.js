@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Consumer } from '../containers/Global'
 import { formatWeather } from '../containers/Formatter'
+import Slider from './Slider'
 
 // Icons:
 // https://iconstore.co/icons/rns-weather-icons/
@@ -13,7 +14,8 @@ const Weather = ({
   description,
   windSpeed,
   tempUnit,
-  windUnit
+  windUnit,
+  toggleUnits
 }) => (
   <div className="Weather">
     <div className="Weather__Description">
@@ -24,6 +26,12 @@ const Weather = ({
       <div>{windSpeed + windUnit}</div>
     </div>
     <div className="Weather__Datetime">
+      <Slider
+        left="metric"
+        right="imperial"
+        onClick={toggleUnits}
+        initial={tempUnit === '°F'}
+      />
       <div>{datetime}</div>
     </div>
   </div>

@@ -1,6 +1,11 @@
 import React from 'react'
 
-export const formatWeather = Component => ({ weather, metric, loading }) =>
+export const formatWeather = Component => ({
+  weather,
+  metric,
+  loading,
+  toggleUnits
+}) =>
   loading ? (
     <div>Loading...</div>
   ) : (
@@ -11,6 +16,7 @@ export const formatWeather = Component => ({ weather, metric, loading }) =>
       windSpeed={weather.wind.speed}
       tempUnit={metric ? '°C' : '°F'}
       windUnit={metric ? 'm/s' : 'mph'}
+      toggleUnits={toggleUnits}
     />
   )
 
@@ -28,17 +34,13 @@ export const formatSun = Component => ({ weather, loading }) =>
 
 export const formatContainer = (Component, children) => ({
   updateData,
-  toggleUnits,
   weather,
   loading
 }) =>
   loading ? (
     <div>Loading...</div>
   ) : (
-    <Component
-      weatherGroup={weather.weather[0].icon}
-      updateData={updateData}
-      toggleUnits={toggleUnits}>
+    <Component weatherGroup={weather.weather[0].icon} updateData={updateData}>
       {children}
     </Component>
   )
