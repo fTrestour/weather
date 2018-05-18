@@ -11,185 +11,198 @@ body {
   height: 100vh;
 
   background-color: $container-background;
-}
 
-.Container {
-  width: 80%;
-  max-width: 800px;
-  height: 80%;
-  @include centerer;
+  .Container {
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    @include centerer;
 
-  border-radius: 5px;
+    border-radius: 5px;
 
-  @include shadow;
+    @include shadow;
 
-  // Sun
-  &.Container--01d,
-  &.Container--02d {
-    background-color: $sun-background;
-    color: $sun-text;
+    // Sun
+    &.Container--01d,
+    &.Container--02d {
+      background-color: $sun-background;
+      color: $sun-text;
+    }
+
+    // Clouds
+    &.Container--03d,
+    &.Container--04d {
+      background-color: $clouds-background;
+      color: $clouds-text;
+    }
+
+    // Rain
+    &.Container--09d,
+    &.Container--10d {
+      background-color: $rain-background;
+      color: $rain-text;
+    }
+
+    // Thunder
+    &.Container--11d {
+      background-color: $thunder-background;
+      color: $thunder-text;
+    }
+
+    // Snow
+    &.Container--13d {
+      background-color: $snow-background;
+      color: $snow-text;
+    }
+
+    // Mist
+    &.Container--50d {
+      background-color: $mist-background;
+      color: $mist-text;
+    }
+
+    // Night
+    &.Container--01n,
+    &.Container--02n,
+    &.Container--03n,
+    &.Container--04n,
+    &.Container--09n,
+    &.Container--10n,
+    &.Container--11n,
+    &.Container--13n,
+    &.Container--50n {
+      background-color: $night-background;
+      color: $night-text;
+    }
   }
 
-  // Clouds
-  &.Container--03d,
-  &.Container--04d {
-    background-color: $clouds-background;
-    color: $clouds-text;
-  }
-
-  // Rain
-  &.Container--09d,
-  &.Container--10d {
-    background-color: $rain-background;
-    color: $rain-text;
-  }
-
-  // Thunder
-  &.Container--11d {
-    background-color: $thunder-background;
-    color: $thunder-text;
-  }
-
-  // Snow
-  &.Container--13d {
-    background-color: $snow-background;
-    color: $snow-text;
-  }
-
-  // Mist
-  &.Container--50d {
-    background-color: $mist-background;
-    color: $mist-text;
-  }
-
-  // Night
-  &.Container--01n,
-  &.Container--02n,
-  &.Container--03n,
-  &.Container--04n,
-  &.Container--09n,
-  &.Container--10n,
-  &.Container--11n,
-  &.Container--13n,
-  &.Container--50n {
-    background-color: $night-background;
-    color: $night-text;
-  }
-}
-
-.Weather {
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .Weather__Description {
-    flex-grow: 1;
-    @include fullWidth;
-
-    @include important;
-  }
-
-  .Weather__Details {
-    @include fullWidth;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    @include information;
-  }
-
-  .Weather__Datetime {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    @include bottom;
-  }
-}
-
-.Sun {
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  .Sun__Details {
-    flex-grow: 1;
-    @include margin;
+  .Weather {
+    height: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 
-    text-align: center;
+    .Weather__Description {
+      flex-grow: 1;
+      @include fullWidth;
 
-    .Sun__Details__Time {
       @include important;
     }
-    .Sun__Details__Sunrise,
-    .Sun__Details__Sunset {
-      @include sans-serif;
-      font-size: 3em;
+
+    .Weather__Details {
+      @include fullWidth;
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      @include information;
+    }
+
+    .Weather__Datetime {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      @include bottom;
     }
   }
 
-  .Sun__Date {
-    @include margin;
+  .Sun {
+    height: 100%;
 
-    @include bottom;
-  }
-}
+    display: flex;
+    flex-direction: column;
 
-.Slider {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    .Sun__Details {
+      flex-grow: 1;
+      @include margin;
 
-  text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
 
-  div {
-    margin: 0px 0px !important;
-  }
+      text-align: center;
 
-  input {
-    display: none;
-  }
-
-  span {
-    margin: 0px 10px !important;
-
-    width: 22px;
-    height: 12px;
-
-    border: solid;
-    border-width: 2px;
-    border-radius: 8px;
-    border-color: currentColor;
-
-    cursor: pointer;
-
-    &:after {
-      content: '';
-      display: block;
-
-      margin-top: 1px;
-      margin-left: 1px;
-      width: 10px;
-      height: 10px;
-
-      border-radius: 5px;
-
-      background-color: currentColor;
+      .Sun__Details__Time {
+        @include important;
+      }
+      .Sun__Details__Sunrise,
+      .Sun__Details__Sunset {
+        @include sans-serif;
+        font-size: 3em;
+      }
     }
 
-    &.right:after {
-      transform: translateX(10px);
+    .Sun__Date {
+      @include margin;
+
+      @include bottom;
+    }
+  }
+
+  .Slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    text-transform: uppercase;
+
+    div {
+      margin: 0px 0px !important;
+    }
+
+    input {
+      display: none;
+    }
+
+    span {
+      margin: 0px 10px !important;
+
+      width: 22px;
+      height: 12px;
+
+      border: solid;
+      border-width: 2px;
+      border-radius: 8px;
+      border-color: currentColor;
+
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        display: block;
+
+        margin-top: 1px;
+        margin-left: 1px;
+        width: 10px;
+        height: 10px;
+
+        border-radius: 5px;
+
+        background-color: currentColor;
+      }
+
+      &.right:after {
+        transform: translateX(10px);
+      }
+    }
+  }
+
+  .Navigation {
+    @include sans-serif;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 2em;
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #7f8c8d;
+      color: #7f8c8d;
     }
   }
 }

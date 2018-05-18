@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Global from '../containers/Global'
 import Container from './Container'
+import Navigation from './Navigation'
 import Weather from './Weather'
 import Sun from './Sun'
 
@@ -11,8 +12,9 @@ const App = () => (
     <Global>
       <Container>
         <Route exact path="/" component={Weather} />
-        <Route exact path="/weather" component={Weather} />
+        <Route path="/weather" component={Weather} />
         <Route path="/sun" component={Sun} />
+        <Navigation />
       </Container>
     </Global>
   </Router>
