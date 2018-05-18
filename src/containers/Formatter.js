@@ -1,13 +1,11 @@
 import React from 'react'
 
-export const formatWeather = Component => ({
-  weather,
-  metric,
-  loading,
-  toggleUnits
-}) =>
-  loading ? (
-    <div>Loading...</div>
+// Container is the component with context whereas {Container} is not wrapped
+import { Container } from '../components/Container'
+
+export const formatWeather = Component => ({ weather, metric, toggleUnits }) =>
+  weather == null ? (
+    <Container />
   ) : (
     <Component
       datetime={new Date(weather.dt * 1000).toLocaleString()}
@@ -20,9 +18,9 @@ export const formatWeather = Component => ({
     />
   )
 
-export const formatSun = Component => ({ weather, loading }) =>
-  loading ? (
-    <div>Loading...</div>
+export const formatSun = Component => ({ weather }) =>
+  weather.weather == null ? (
+    <Container />
   ) : (
     <Component
       time={new Date().toLocaleTimeString()}
@@ -37,8 +35,8 @@ export const formatContainer = (Component, children) => ({
   weather,
   loading
 }) =>
-  loading ? (
-    <div>Loading...</div>
+  weather.weather == null ? (
+    <Container />
   ) : (
     <Component weatherGroup={weather.weather[0].icon} updateData={updateData}>
       {children}

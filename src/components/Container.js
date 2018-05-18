@@ -3,7 +3,7 @@ import React from 'react'
 import { Consumer } from '../containers/Global'
 import { formatContainer } from '../containers/Formatter'
 
-const Container = ({ updateData, toggleUnits, weatherGroup, children }) => (
+export const Container = ({ weatherGroup, children }) => (
   <div className="Screen">
     <div className={`Container Container--${weatherGroup}`}>{children}</div>
   </div>
