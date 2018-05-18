@@ -1,12 +1,6 @@
 import React from 'react'
 
-export const formatWeather = Component => ({
-  toggleUnits,
-  weather,
-  weatherFail,
-  metric,
-  loading
-}) =>
+export const formatWeather = Component => ({ weather, loading }) =>
   loading ? (
     <div>Loading...</div>
   ) : (
@@ -18,13 +12,7 @@ export const formatWeather = Component => ({
     />
   )
 
-export const formatSun = Component => ({
-  toggleUnits,
-  weather,
-  weatherFail,
-  metric,
-  loading
-}) =>
+export const formatSun = Component => ({ weather, loading }) =>
   loading ? (
     <div>Loading...</div>
   ) : (
@@ -32,4 +20,21 @@ export const formatSun = Component => ({
       sunrise={new Date(weather.sys.sunrise * 1000).toLocaleDateString()}
       sunset={new Date(weather.sys.sunset * 1000).toLocaleDateString()}
     />
+  )
+
+export const formatContainer = (Component, children) => ({
+  updateData,
+  toggleUnits,
+  weather,
+  loading
+}) =>
+  loading ? (
+    <div>Loading...</div>
+  ) : (
+    <Component
+      weatherGroup={weather.weather[0].icon}
+      updateData={updateData}
+      toggleUnits={toggleUnits}>
+      {children}
+    </Component>
   )

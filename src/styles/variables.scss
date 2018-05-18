@@ -1,0 +1,38 @@
+// Playfair display + Robotto
+// font-family: 'Playfair Display', serif;
+// font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900,900i|Roboto');
+
+$container-background: #ecf0f1;
+
+$sun-background: #f7d97e;
+$sun-text: #ae030b;
+
+$clouds-background: #dcd7df;
+$clouds-text: #323e49;
+
+$rain-background: #b5d9ed;
+$rain-text: #2c2ca5;
+
+$thunder-background: #0609e8;
+$thunder-text: #fccc2e;
+
+$snow-background: #fff;
+$snow-text: #19266d;
+
+$mist-background: #e5dce3;
+$mist-text: #272b40;
+
+$night-background: #101d6a;
+$night-text: #d9cfe8;
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin shadow {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}

@@ -1,7 +1,14 @@
 import React from 'react'
 
-const Container = ({ updateData, toggleUnits, children }) => (
-  <div>{children}</div>
+import { Consumer } from '../containers/Global'
+import { formatContainer } from '../containers/Formatter'
+
+const Container = ({ updateData, toggleUnits, weatherGroup, children }) => (
+  <div className="Screen">
+    <div className={`Container Container--${weatherGroup}`}>{children}</div>
+  </div>
 )
 
-export default Container
+export default ({ children }) => (
+  <Consumer>{formatContainer(Container, children)}</Consumer>
+)

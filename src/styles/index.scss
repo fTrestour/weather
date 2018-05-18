@@ -1,0 +1,90 @@
+@import './variables.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.Screen {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $container-background;
+}
+
+.Container {
+  width: 80%;
+  height: 80%;
+  @include centerer;
+
+  border-radius: 5px;
+
+  @include shadow;
+
+  // Sun
+  &.Container--01d,
+  &.Container--02d {
+    background-color: $sun-background;
+    color: $sun-text;
+  }
+
+  // Clouds
+  &.Container--03d,
+  &.Container--04d {
+    background-color: $clouds-background;
+    color: $clouds-text;
+  }
+
+  // Rain
+  &.Container--09d,
+  &.Container--10d {
+    background-color: $rain-background;
+    color: $rain-text;
+  }
+
+  // Thunder
+  &.Container--11d {
+    background-color: $thunder-background;
+    color: $thunder-text;
+  }
+
+  // Snow
+  &.Container--13d {
+    background-color: $snow-background;
+    color: $snow-text;
+  }
+
+  // Mist
+  &.Container--50d {
+    background-color: $mist-background;
+    color: $mist-text;
+  }
+
+  // Night
+  &.Container--01n,
+  &.Container--02n,
+  &.Container--03n,
+  &.Container--04n,
+  &.Container--09n,
+  &.Container--10n,
+  &.Container--11n,
+  &.Container--13n,
+  &.Container--50n {
+    background-color: $night-background;
+    color: $night-text;
+  }
+}
+
+.Weather {
+  margin: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .Weather__Description {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+  }
+}

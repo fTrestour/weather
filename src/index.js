@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import registerServiceWorker from './registerServiceWorker'
 
-import './index.css'
+import './styles/index.css'
 import App from './components/App'
 
 ReactDOM.render(<App />, document.getElementById('root'))
