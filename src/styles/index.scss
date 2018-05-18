@@ -77,14 +77,40 @@ body {
 }
 
 .Weather {
-  margin: 30px;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .Weather__Description {
-    font-family: 'Playfair Display', serif;
-    font-size: 3em;
+    flex-grow: 1;
+    @include fullWidth;
+
+    @include serif;
+    font-size: 5em;
+    text-transform: capitalize;
+  }
+
+  .Weather__Details {
+    flex-grow: 0;
+    @include fullWidth;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    @include sans-serif;
+    font-size: 5em;
+  }
+
+  .Weather__Datetime {
+    flex-grow: 0;
+    @include fullWidth;
+
+    @include sans-serif;
+    font-size: 1.5em;
+    text-align: right;
   }
 }

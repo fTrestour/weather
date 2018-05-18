@@ -7,12 +7,25 @@ import { formatWeather } from '../containers/Formatter'
 // https://iconstore.co/icons/rns-weather-icons/
 // Codes doc : https://openweathermap.org/weather-conditions
 
-const Weather = ({ datetime, temperature, description, windSpeed }) => (
+const Weather = ({
+  datetime,
+  temperature,
+  description,
+  windSpeed,
+  tempUnit,
+  windUnit
+}) => (
   <div className="Weather">
-    <div className="Weather__Description">{description}</div>
-    <div className="Weather__Temperature">{temperature}</div>
-    <div className="Weather__Windspeed">{windSpeed}</div>
-    <div className="Weather__Datetime">{datetime}</div>
+    <div className="Weather__Description">
+      <div>{description}</div>
+    </div>
+    <div className="Weather__Details">
+      <div>{temperature + tempUnit}</div>
+      <div>{windSpeed + windUnit}</div>
+    </div>
+    <div className="Weather__Datetime">
+      <div>{datetime}</div>
+    </div>
   </div>
 )
 

@@ -1,14 +1,16 @@
 import React from 'react'
 
-export const formatWeather = Component => ({ weather, loading }) =>
+export const formatWeather = Component => ({ weather, metric, loading }) =>
   loading ? (
     <div>Loading...</div>
   ) : (
     <Component
-      datetime={new Date(weather.dt * 1000).toLocaleDateString()}
+      datetime={new Date(weather.dt * 1000).toLocaleString()}
       temperature={weather.main.temp}
       description={weather.weather[0].description}
       windSpeed={weather.wind.speed}
+      tempUnit={metric ? '°C' : '°F'}
+      windUnit={metric ? 'm/s' : 'mph'}
     />
   )
 
@@ -17,8 +19,8 @@ export const formatSun = Component => ({ weather, loading }) =>
     <div>Loading...</div>
   ) : (
     <Component
-      sunrise={new Date(weather.sys.sunrise * 1000).toLocaleDateString()}
-      sunset={new Date(weather.sys.sunset * 1000).toLocaleDateString()}
+      sunrise={new Date(weather.sys.sunrise * 1000).toLocaleString()}
+      sunset={new Date(weather.sys.sunset * 1000).toLocaleString()}
     />
   )
 
