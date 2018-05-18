@@ -2,19 +2,16 @@ import React from 'react'
 
 import { Consumer } from '../containers/Global'
 
-const Weather = ({
-  updateData,
-  toggleUnits,
-  weather,
-  weatherFail,
-  metric,
-  loading
-}) => (
+const Weather = ({ toggleUnits, weather, weatherFail, metric, loading }) => (
   <div>
-    <button onClick={toggleUnits}>Change unit</button>
-    {loading ? null : weather.main.temp}
-
-    <button onClick={updateData}>Update data</button>
+    {loading
+      ? null
+      : [
+          new Date(weather.dt * 1000).toLocaleDateString(),
+          weather.main.temp,
+          weather.weather[0].description,
+          weather.wind.speed
+        ]}
   </div>
 )
 
