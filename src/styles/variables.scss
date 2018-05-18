@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:100');
 
 $container-background: #ecf0f1;
+$link-color: #7f8c8d;
 
 $sun-background: #f7d97e;
 $sun-text: #ae030b;
@@ -23,6 +24,11 @@ $mist-text: #272b40;
 $night-background: #101d6a;
 $night-text: #d9cfe8;
 
+$general-margin: 30px;
+
+$slider-size: 20px;
+$slider-whitespace: 1px;
+
 @mixin centerer {
   position: absolute;
   top: 50%;
@@ -35,10 +41,10 @@ $night-text: #d9cfe8;
 }
 
 @mixin margin {
-  margin: 30px 0px;
+  margin: $general-margin 0px;
 
   div {
-    margin: 0px 30px;
+    margin: 0px $general-margin;
   }
 }
 

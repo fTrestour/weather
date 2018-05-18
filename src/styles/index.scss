@@ -18,7 +18,7 @@ body {
     height: 80%;
     @include centerer;
 
-    border-radius: 5px;
+    border-radius: $general_margin/2;
 
     @include shadow;
 
@@ -161,14 +161,14 @@ body {
     }
 
     span {
-      margin: 0px 10px !important;
+      margin: 0px $general-margin/3 !important;
 
-      width: 22px;
-      height: 12px;
+      width: $slider-size + 2 * 2 * $slider-whitespace;
+      height: $slider-size / 2 + 2 * $slider-whitespace;
 
       border: solid;
-      border-width: 2px;
-      border-radius: 8px;
+      border-width: $slider-whitespace;
+      border-radius: $slider-size / 4 + 4 * $slider-whitespace;
       border-color: currentColor;
 
       cursor: pointer;
@@ -177,18 +177,18 @@ body {
         content: '';
         display: block;
 
-        margin-top: 1px;
-        margin-left: 1px;
-        width: 10px;
-        height: 10px;
+        margin-top: $slider-whitespace;
+        margin-left: $slider-whitespace;
+        width: $slider-size / 2;
+        height: $slider-size / 2;
 
-        border-radius: 5px;
+        border-radius: 50%;
 
         background-color: currentColor;
       }
 
       &.right:after {
-        transform: translateX(10px);
+        transform: translateX($slider-size / 2);
       }
     }
   }
@@ -196,13 +196,13 @@ body {
   .Navigation {
     @include sans-serif;
     text-align: center;
-    margin-top: 15px;
+    margin-top: $general_margin/2;
     font-size: 2em;
 
     a {
       text-decoration: none;
-      border-bottom: 1px solid #7f8c8d;
-      color: #7f8c8d;
+      border-bottom: 1px solid $link-color;
+      color: $link-color;
     }
   }
 }
