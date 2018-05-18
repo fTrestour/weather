@@ -1,16 +1,8 @@
 import React from 'react'
 
 import { Consumer } from '../containers/Global'
+import { formatSun } from '../containers/Formatter'
 
-const Sun = ({ toggleUnits, weather, weatherFail, metric, loading }) => (
-  <div>
-    {loading
-      ? null
-      : [
-          new Date(weather.sys.sunrise * 1000).toLocaleDateString(),
-          new Date(weather.sys.sunset * 1000).toLocaleDateString()
-        ]}
-  </div>
-)
+const Sun = ({ sunrise, sunset }) => <div>{[sunrise, sunset]}</div>
 
-export default () => <Consumer>{Sun}</Consumer>
+export default () => <Consumer>{formatSun(Sun)}</Consumer>
