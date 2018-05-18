@@ -15,6 +15,7 @@ body {
 
 .Container {
   width: 80%;
+  max-width: 800px;
   height: 80%;
   @include centerer;
 
@@ -87,13 +88,10 @@ body {
     flex-grow: 1;
     @include fullWidth;
 
-    @include serif;
-    font-size: 5em;
-    text-transform: capitalize;
+    @include important;
   }
 
   .Weather__Details {
-    flex-grow: 0;
     @include fullWidth;
 
     display: flex;
@@ -101,16 +99,44 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
 
-    @include sans-serif;
-    font-size: 5em;
+    @include information;
   }
 
   .Weather__Datetime {
-    flex-grow: 0;
-    @include fullWidth;
+    @include bottom;
+  }
+}
 
-    @include sans-serif;
-    font-size: 1.5em;
-    text-align: right;
+.Sun {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .Sun__Details {
+    flex-grow: 1;
+    @include margin;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    text-align: center;
+
+    .Sun__Details__Time {
+      @include important;
+    }
+    .Sun__Details__Sunrise,
+    .Sun__Details__Sunset {
+      @include sans-serif;
+      font-size: 3em;
+    }
+  }
+
+  .Sun__Date {
+    @include margin;
+
+    @include bottom;
   }
 }

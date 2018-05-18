@@ -34,13 +34,17 @@ $night-text: #d9cfe8;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-@mixin fullWidth {
-  width: 100%;
+@mixin margin {
   margin: 30px 0px;
 
   div {
     margin: 0px 30px;
   }
+}
+
+@mixin fullWidth {
+  width: 100%;
+  @include margin;
 }
 
 @mixin serif {
@@ -49,4 +53,23 @@ $night-text: #d9cfe8;
 
 @mixin sans-serif {
   font-family: 'Roboto', sans-serif;
+}
+
+@mixin important {
+  @include serif;
+  font-size: 5em;
+  text-transform: capitalize;
+}
+
+@mixin information {
+  @include sans-serif;
+  font-size: 5em;
+}
+
+@mixin bottom {
+  @include fullWidth;
+
+  @include sans-serif;
+  font-size: 1.5em;
+  text-align: right;
 }

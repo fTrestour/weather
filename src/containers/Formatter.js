@@ -19,8 +19,10 @@ export const formatSun = Component => ({ weather, loading }) =>
     <div>Loading...</div>
   ) : (
     <Component
-      sunrise={new Date(weather.sys.sunrise * 1000).toLocaleString()}
-      sunset={new Date(weather.sys.sunset * 1000).toLocaleString()}
+      time={new Date().toLocaleTimeString()}
+      sunrise={new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}
+      sunset={new Date(weather.sys.sunset * 1000).toLocaleTimeString()}
+      date={new Date().toLocaleDateString()}
     />
   )
 
