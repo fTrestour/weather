@@ -48,7 +48,7 @@ class Global extends Component {
           toggleUnits: this.toggleUnits.bind(this),
           ...this.state
         }}>
-        <div className="Global">{this.props.children}</div>
+        {this.props.children}
       </Context.Provider>
     )
   }
