@@ -5,6 +5,7 @@ import { formatWeather } from '../containers/Formatter'
 
 // Icons:
 // https://iconstore.co/icons/rns-weather-icons/
+// Codes doc : https://openweathermap.org/weather-conditions
 
 const Weather = ({ datetime, temperature, description, windSpeed }) => (
   <div className="Weather">
