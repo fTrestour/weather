@@ -2,9 +2,12 @@ import React from 'react'
 
 import { Consumer } from '../containers/Global'
 
-const Weather = ({ weather, weatherFail }) => (
+const Weather = ({ updateData, toggleUnits, weather, weatherFail, metric }) => (
   <div>
-    <code>{JSON.stringify(weather)}</code>
+    <button onClick={toggleUnits}>Change unit</button>
+    {JSON.stringify(weather)}
+
+    <button onClick={updateData}>Update data</button>
   </div>
 )
 

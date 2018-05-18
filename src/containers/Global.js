@@ -4,7 +4,8 @@ import { getBigCityWeather } from '../apis/OpenWeatherMap'
 
 const defaultContext = {
   weather: {},
-  weatherFail: false
+  weatherFail: false,
+  metric: true
 }
 
 const Context = createContext(defaultContext)
@@ -16,8 +17,8 @@ class Global extends Component {
     this.state = defaultContext
   }
 
-  componentDidMount() {
-    getBigCityWeather('Paris')
+  updateData() {
+    getBigCityWeather('Paris', this.state.metric)
       .then(({ data }) => this.setState({ weather: data }))
       .catch(error => {
         this.setState({ weatherFail: true })
@@ -25,9 +26,25 @@ class Global extends Component {
       })
   }
 
+  componentDidMount() {
+    this.updateData()
+  }
+
+  toggleUnits() {
+    // To make sure "change units" button spam works
+    // a functional setState is better
+    // When the state is mutatated, data is fetched again
+    this.setState(oldState => ({ metric: !oldState.metric }), this.updateData)
+  }
+
   render() {
     return (
-      <Context.Provider value={this.state}>
+      <Context.Provider
+        value={{
+          updateData: this.updateData.bind(this),
+          toggleUnits: this.toggleUnits.bind(this),
+          ...this.state
+        }}>
         <div className="Global">{this.props.children}</div>
       </Context.Provider>
     )
