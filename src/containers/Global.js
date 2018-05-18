@@ -4,6 +4,7 @@ import { getBigCityWeather } from '../apis/OpenWeatherMap'
 
 const defaultContext = {
   weather: {},
+  loading: true,
   weatherFail: false,
   metric: true
 }
@@ -18,12 +19,14 @@ class Global extends Component {
   }
 
   updateData() {
-    getBigCityWeather('Paris', this.state.metric)
-      .then(({ data }) => this.setState({ weather: data }))
-      .catch(error => {
-        this.setState({ weatherFail: true })
-        console.error(error)
-      })
+    this.setState({ loading: true }, () =>
+      getBigCityWeather('Paris', this.state.metric)
+        .then(({ data }) => this.setState({ weather: data, loading: false }))
+        .catch(error => {
+          this.setState({ weatherFail: true })
+          console.error(error)
+        })
+    )
   }
 
   componentDidMount() {
