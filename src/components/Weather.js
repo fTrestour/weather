@@ -4,10 +4,6 @@ import { Consumer } from '../containers/Global'
 import { formatWeather } from '../containers/Formatter'
 import Slider from './Slider'
 
-// Icons:
-// https://iconstore.co/icons/rns-weather-icons/
-// Codes doc : https://openweathermap.org/weather-conditions
-
 const Weather = ({
   datetime,
   temperature,
