@@ -1,5 +1,5 @@
-![enter image description here](https://firebasestorage.googleapis.com/v0/b/weather-b7665.appspot.com/o/Capture.PNG?alt=media&token=71db3898-b045-4264-b320-3fb629ae28b8)
-![enter image description here](https://firebasestorage.googleapis.com/v0/b/weather-b7665.appspot.com/o/Capture2.PNG?alt=media&token=0ad6a151-45cd-4cd1-800d-f0fdb9e8b215)
+![Weather Page](https://firebasestorage.googleapis.com/v0/b/weather-b7665.appspot.com/o/Capture.PNG?alt=media&token=71db3898-b045-4264-b320-3fb629ae28b8)
+![Sunset/Sunrise page](https://firebasestorage.googleapis.com/v0/b/weather-b7665.appspot.com/o/Capture2.PNG?alt=media&token=0ad6a151-45cd-4cd1-800d-f0fdb9e8b215)
 
 *Note:*
 This project was part of a recruitment process. The goal was to create a webapp with two pages: one of them would display the current weather in Paris, while the other one would display both sunrise and sunset time that day.
